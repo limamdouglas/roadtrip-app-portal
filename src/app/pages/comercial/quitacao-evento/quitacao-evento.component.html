@@ -1,0 +1,74 @@
+<app-menu-administrativo></app-menu-administrativo>
+<div class=" container py-3">
+  <h1>Quitação de Eventos</h1>
+  <form>
+    <div class="p-3">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Evento </label>
+          <select class="custom-select mx-3">
+            <option selected>Selecione um evento</option>
+            <option value="1">Chapada dos Veadeiros</option>
+            <option value="2">Jalapão</option>
+            <option value="3">Chike</option>
+          </select>
+        </div>
+      </div>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex">
+      <button class="btn btn-outline-secondary mr-auto border">
+        Limpar Filtro
+      </button>
+      <button class="btn btn-success mx-2">
+        <span></span>
+        Filtrar
+      </button>
+    </div>
+  </div>
+</form>
+<hr>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Evento</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Link de Quitação</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Lavrinhas</td>
+      <td>Joazinho</td>
+      <td>www.roadtrip.com.br</td>
+      <td>
+        <button class="btn btn-secondary btn-block" type="submit">Copiar Link</button>
+        <button class="btn btn-secondary btn-block mx-2" type="submit">Enviar pelo whastapp</button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Janela do Céu</td>
+      <td>Marcia</td>
+      <td>www.roadtrip.com.br</td>
+      <td>
+        <button class="btn btn-secondary btn-block" type="submit">Copiar Link</button>
+        <button class="btn btn-secondary btn-block mx-2" type="submit">Enviar pelo whastapp</button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Vale da Lua</td>
+      <td>Ricardo</td>
+      <td>www.roadtrip.com.br</td>
+      <td>
+        <button class="btn btn-secondary btn-block" type="submit">Copiar Link</button>
+        <button class="btn btn-secondary btn-block mx-2" type="submit">Enviar pelo whastapp</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

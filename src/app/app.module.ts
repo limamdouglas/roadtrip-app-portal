@@ -22,6 +22,9 @@ import { QuitacaoEventoComponent } from './pages/comercial/quitacao-evento/quita
 import { MelhoresEventosComponent } from './pages/administracao/melhores-eventos/melhores-eventos.component';
 import { MelhoresClientesComponent } from './pages/administracao/melhores-clientes/melhores-clientes.component';
 import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualizar-adm/eventos-visualizar-adm.component';
+import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
+import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
+import { EstornoComponent } from './pages/financeiro/estorno/estorno.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualiza
     MelhoresEventosComponent,
     MelhoresClientesComponent,
     EventosVisualizarAdmComponent,
+    CreditoListarComponent,
+    CreditoCadastrarComponent,
+    EstornoComponent,
   ],
   imports: [
     BrowserModule,

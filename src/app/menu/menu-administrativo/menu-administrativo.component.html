@@ -12,16 +12,76 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/administracao/melhores-clientes">Administrativo</a>
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-block">
+                <button type="button" class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+                  Administrativo
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/administracao/melhores-clientes" ngbDropdownItem>Melhores clientes</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/sac/solicatao-cliente">SAC</a>
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-block">
+                <button type="button" class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+                  SAC
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/sac/solicatao-cliente" ngbDropdownItem>Solicitação dos clientes</button>
+                  <button routerLink="/sac/credito-listar" ngbDropdownItem>Crédito</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/comercial/quitacao-evento">Comercial</a>
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-block">
+                <button type="button" class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+                  Comercial
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/comercial/quitacao-evento" ngbDropdownItem>Quitação de Eventos</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/eventos/listar">Eventos</a>
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-block">
+                <button type="button" class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+                  Eventos
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <a class="nav-link" routerLink="/eventos/listar">Eventos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-block">
+                <button type="button" class="btn btn-dark" id="dropdownBasic1" ngbDropdownToggle>
+                  Financeiro
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button routerLink="/comercial/quitacao-evento" ngbDropdownItem>Pagamento colaboradores</button>
+                  <button routerLink="/financeiro/estorno" ngbDropdownItem>Estornos</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
       <form class="d-flex mx-3">

@@ -3,18 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeAdministrativoComponent } from './home/home-administrativo/home-administrativo.component';
 import { HomeClienteComponent } from './home/home-cliente/home-cliente.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
-import { EventosClienteComponent } from './pages/eventos/eventos-cliente/eventos-cliente.component';
-import { EventosCadastrarComponent } from './pages/eventos/eventos-cadastrar/eventos-cadastrar.component';
-import { EventosLsitarComponent } from './pages/eventos/eventos-lsitar/eventos-lsitar.component';
-import { SolicitacaoClienteComponent } from './pages/sac/solicitacao-cliente/solicitacao-cliente.component';
-import { EventoVisualizarComponent } from './pages/eventos/evento-visualizar/evento-visualizar.component';
-import { QuitacaoEventoComponent } from './pages/comercial/quitacao-evento/quitacao-evento.component';
-import { MelhoresEventosComponent } from './pages/administracao/melhores-eventos/melhores-eventos.component';
-import { MelhoresClientesComponent } from './pages/administracao/melhores-clientes/melhores-clientes.component';
-import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualizar-adm/eventos-visualizar-adm.component';
-import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
-import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
-import { EstornoComponent } from './pages/financeiro/estorno/estorno.component';
+import { EventosListagemComponent } from './pages/administrativo/eventos/eventos-listagem/eventos-listagem.component';
+import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
+import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
+import { StaffCadastroComponent } from './pages/administrativo/staff/staff-cadastro/staff-cadastro.component';
+import { StaffListagemComponent } from './pages/administrativo/staff/staff-listagem/staff-listagem.component';
+import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
+import { EventosClientesListagemComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-listagem/eventos-clientes-listagem.component';
+import { EventosStaffCadastroComponent } from './pages/administrativo/eventos-staff/eventos-staff-cadastro/eventos-staff-cadastro.component';
+import { EventosStaffListagemComponent } from './pages/administrativo/eventos-staff/eventos-staff-listagem/eventos-staff-listagem.component';
+import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos-cadastro/eventos-cadastro.component';
 
 const routes: Routes = [
   {
@@ -35,53 +33,78 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'eventos/meus-eventos',
-    component: EventosClienteComponent
+    path: 'eventos',
+    children: [
+      {
+        path: 'cadastar',
+        component: EventosCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: EventosListagemComponent,
+      },
+      {
+        path: 'categoria-cadastar',
+        component: EventosListagemComponent,
+      },
+      {
+        path: 'categoria-listar',
+        component: EventosListagemComponent,
+      }
+    ]
   },
   {
-    path: 'eventos/cadastro',
-    component: EventosCadastrarComponent
+    path: 'clentes',
+    children: [
+      {
+        path: 'cadastar',
+        component: ClientesCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: ClientesListagemComponent,
+      }
+    ]
   },
   {
-    path: 'eventos/listar',
-    component: EventosLsitarComponent
+    path: 'staff',
+    children: [
+      {
+        path: 'cadastar',
+        component: StaffCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: StaffListagemComponent,
+      }
+    ]
   },
   {
-    path: 'sac/solicatao-cliente',
-    component: SolicitacaoClienteComponent
+    path: 'eventos-clientes',
+    children: [
+      {
+        path: 'cadastar',
+        component: EventosClientesCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: EventosClientesListagemComponent,
+      }
+    ]
   },
   {
-    path: 'eventos/visualizar',
-    component: EventoVisualizarComponent
+    path: 'eventos-staff',
+    children: [
+      {
+        path: 'cadastar',
+        component: EventosStaffCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: EventosStaffListagemComponent,
+      }
+    ]
   },
-  {
-    path: 'comercial/quitacao-evento',
-    component: QuitacaoEventoComponent
-  },
-  {
-    path: 'administracao/melhores-eventos',
-    component: MelhoresEventosComponent
-  },
-  {
-    path: 'administracao/melhores-clientes',
-    component: MelhoresClientesComponent
-  },
-  {
-    path: 'eventos/visualizar-adm',
-    component: EventosVisualizarAdmComponent
-  },
-  {
-    path: 'sac/credito-listar',
-    component: CreditoListarComponent
-  },
-  {
-    path: 'sac/credito-cadastrar',
-    component: CreditoCadastrarComponent
-  },
-  {
-    path: 'financeiro/estorno',
-    component: EstornoComponent
-  }
 ];
 
 @NgModule({

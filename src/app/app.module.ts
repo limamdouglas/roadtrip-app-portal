@@ -25,6 +25,18 @@ import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualiza
 import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
 import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
 import { EstornoComponent } from './pages/financeiro/estorno/estorno.component';
+import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos-cadastro/eventos-cadastro.component';
+import { EventosListagemComponent } from './pages/administrativo/eventos/eventos-listagem/eventos-listagem.component';
+import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
+import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
+import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
+import { EventosClientesListagemComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-listagem/eventos-clientes-listagem.component';
+import { EventosStaffCadastroComponent } from './pages/administrativo/eventos-staff/eventos-staff-cadastro/eventos-staff-cadastro.component';
+import { EventosStaffListagemComponent } from './pages/administrativo/eventos-staff/eventos-staff-listagem/eventos-staff-listagem.component';
+import { StaffCadastroComponent } from './pages/administrativo/staff/staff-cadastro/staff-cadastro.component';
+import { StaffListagemComponent } from './pages/administrativo/staff/staff-listagem/staff-listagem.component';
+import { EventosCategoriaCadastroComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-cadastro/eventos-categoria-cadastro.component';
+import { EventosCategoriaListagemComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-listagem/eventos-categoria-listagem.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +61,18 @@ import { EstornoComponent } from './pages/financeiro/estorno/estorno.component';
     CreditoListarComponent,
     CreditoCadastrarComponent,
     EstornoComponent,
+    EventosCadastroComponent,
+    EventosListagemComponent,
+    ClientesCadastroComponent,
+    ClientesListagemComponent,
+    EventosClientesCadastroComponent,
+    EventosClientesListagemComponent,
+    EventosStaffCadastroComponent,
+    EventosStaffListagemComponent,
+    StaffCadastroComponent,
+    StaffListagemComponent,
+    EventosCategoriaCadastroComponent,
+    EventosCategoriaListagemComponent,
   ],
   imports: [
     BrowserModule,

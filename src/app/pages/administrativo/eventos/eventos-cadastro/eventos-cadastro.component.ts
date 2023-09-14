@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class EventosCadastroComponent {
 
+  salvarEvento(){
+
+  }
+
+  voltar(){
+
+  }
+
+  limpar(){
+    
+  }
 }

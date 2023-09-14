@@ -11,8 +11,12 @@ export class EventosListagemComponent {
   constructor(private router: Router) {
     // O loginForm não é inicializado no construtor
   }
-  
+
   visualizar(){
     this.router.navigate(['/eventos/visualizar-adm']);
+  }
+
+  cadastarEvento(){
+    this.router.navigate(['/eventos/cadastar']);
   }
 }

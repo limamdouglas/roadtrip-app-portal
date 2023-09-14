@@ -1,1 +1,45 @@
-<p>eventos-cadastro works!</p>
+<app-menu-administrativo></app-menu-administrativo>
+<div class="container py-3">
+  <div class="d-flex">
+      <h1>Cadastrar Eventos</h1>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-8 order-md-1">
+      <form class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="primeiroNome">Nome do Evento</label>
+            <input type="text" class="form-control" id="primeiroNome" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              É obrigatório inserir um nome válido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="inputEmail4" class="form-label">Categoria</label>
+            <select id="inputState" class="form-select">
+              <option selected>Selecione uma categoria</option>
+              <option value="1">Trilha</option>
+              <option value="2">Viagem Bate Volta</option>
+              <option value="3">Viagem Terrestre</option>
+              <option value="4">Vigem Aereo</option>
+              <option value="5">Festas</option>
+              <option value="6">Aventura</option>
+              <option value="7">Camping</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputEmail4" class="form-label">Data do Evento</label>
+          <input>
+        </div>
+        <div>
+          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="limpar()">Limpar</button>
+          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="salvarEvento()">Salvar</button>
+          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="voltar()">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

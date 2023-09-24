@@ -37,6 +37,11 @@ import { StaffCadastroComponent } from './pages/administrativo/staff/staff-cadas
 import { StaffListagemComponent } from './pages/administrativo/staff/staff-listagem/staff-listagem.component';
 import { EventosCategoriaCadastroComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-cadastro/eventos-categoria-cadastro.component';
 import { EventosCategoriaListagemComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-listagem/eventos-categoria-listagem.component';
+import { SelectCategoriaEventoComponent } from './shared/components/select-categoria-evento/select-categoria-evento.component';
+import { RequestSpinnerComponent } from './shared/components/request-spinner/request-spinner.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgSelectModule } from '@ng-select/ng-select'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -73,14 +78,19 @@ import { EventosCategoriaListagemComponent } from './pages/administrativo/evento
     StaffListagemComponent,
     EventosCategoriaCadastroComponent,
     EventosCategoriaListagemComponent,
+    SelectCategoriaEventoComponent,
+    RequestSpinnerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

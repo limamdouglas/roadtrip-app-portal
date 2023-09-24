@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +7,23 @@ import { Router } from '@angular/router';
   templateUrl: './eventos-listagem.component.html',
   styleUrls: ['./eventos-listagem.component.scss']
 })
-export class EventosListagemComponent {
+export class EventosListagemComponent implements OnInit{
 
-  constructor(private router: Router) {
-    // O loginForm não é inicializado no construtor
+  formulario: FormGroup;
+
+  constructor(private router: Router,
+              private formBuilder: FormBuilder) {
+  }
+
+  ngOnInit() {
+    this.criarFormulario();
+  }
+
+  criarFormulario(){
+    this.formulario = this.formBuilder.group({
+      nome: [null],
+      email: [null]
+    });
   }
 
   visualizar(){
@@ -18,5 +32,13 @@ export class EventosListagemComponent {
 
   cadastarEvento(){
     this.router.navigate(['/eventos/cadastar']);
+  }
+
+  pesquisarEvento(){
+
+  }
+
+  limparFiltro(){
+    
   }
 }

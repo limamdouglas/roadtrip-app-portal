@@ -23,11 +23,28 @@
         <input type="text" class="form-control" formControlName="email" id="email" placeholder="Digite um email">
       </div>
     </div>
-    <div class="row">
-      <div class="col-1 pt-3">
-        <button class="btn btn-secondary" type="submit" (click)="pesquisarEvento()">Pesquisar</button>
+    <div class="row pt-3">
+      <div class="col-3">
+        <label for="nome" class="control-label">CEP</label>
+        <input type="text" class="form-control" formControlName="cep" id="cep"
+               placeholder="Digite um cep valido" (blur)="consultaCEP()">
       </div>
-      <div class="col-1 pt-3">
+      <div class="col-6">
+        <label for="email" class="control-label">Endereço</label>
+        <input type="text" class="form-control" formControlName="endereco" id="endereco"
+               placeholder="Endereço">
+      </div>
+      <div class="col-3">
+        <label for="email" class="control-label">Estado</label>
+        <input type="text" class="form-control" formControlName="estado" id="estado"
+               placeholder="Estado">
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="pesquisarEvento()" [disabled]="!formulario.valid">Pesquisar</button>
+      </div>
+      <div class="col-1">
         <button class="btn btn-secondary" type="submit" (click)="limparFiltro()">Limpar</button>
       </div>
     </div>

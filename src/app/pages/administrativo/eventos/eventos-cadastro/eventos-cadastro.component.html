@@ -1,45 +1,40 @@
 <app-menu-administrativo></app-menu-administrativo>
 <div class="container py-3">
   <div class="d-flex">
-      <h1>Cadastrar Eventos</h1>
+    <h1>Eventos</h1>
   </div>
   <hr>
-  <div class="row">
-    <div class="col-md-8 order-md-1">
-      <form class="needs-validation" novalidate="">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="primeiroNome">Nome do Evento</label>
-            <input type="text" class="form-control" id="primeiroNome" placeholder="" value="" required="">
-            <div class="invalid-feedback">
-              É obrigatório inserir um nome válido.
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="inputEmail4" class="form-label">Categoria</label>
-            <select id="inputState" class="form-select">
-              <option selected>Selecione uma categoria</option>
-              <option value="1">Trilha</option>
-              <option value="2">Viagem Bate Volta</option>
-              <option value="3">Viagem Terrestre</option>
-              <option value="4">Vigem Aereo</option>
-              <option value="5">Festas</option>
-              <option value="6">Aventura</option>
-              <option value="7">Camping</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="inputEmail4" class="form-label">Data do Evento</label>
-          <input>
-        </div>
-        <div>
-          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="limpar()">Limpar</button>
-          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="salvarEvento()">Salvar</button>
-          <button class="btn btn-secondary mx-2 py-sm-0" type="submit" (click)="voltar()">Voltar</button>
-        </div>
-      </form>
+  <form class="form-horizontal" [formGroup]="formulario">
+    <div class="row">
+      <div class="col-3">
+        <label for="evento" class="control-label">Evento</label>
+        <input type="text" class="form-control" formControlName="evento" id="evento" placeholder="Digite o nome do evento">
+      </div>
+      <div class="col-3">
+        <label for="categoria" class="control-label">Categoria</label>
+        <select class="form-control" formControlName="categoria" id="categoria">
+          <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.descricao}}</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="dataEvento" class="control-label">Data</label>
+        <input type="date" class="form-control" formControlName="dataEvento" id="dataEvento" placeholder="Digite a data do evento">
+      </div>
+      <div class="col-3">
+        <label for="qtdVagas" class="control-label">Quantidade de vagas</label>
+        <input type="number" class="form-control" formControlName="qtdVagas" id="qtdVagas" placeholder="Digite o numero de vagas">
+      </div>
     </div>
-  </div>
+    <div class="row pt-3">
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="salvarEvento()" [disabled]="!formulario.valid">Salvar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="voltar()">Voltar</button>
+      </div>
+    </div>
+  </form>
 </div>

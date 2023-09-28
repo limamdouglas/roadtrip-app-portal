@@ -1,3 +1,4 @@
+import { CategoriaEventoService } from './../../../../services/categoria-evento/categoria-evento.service';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -6,6 +7,8 @@ import { Router } from '@angular/router';
 import { EstadosService } from 'src/app/shared/services/estados/estados.service';
 import { EstadosDto } from 'src/app/models/shared/estados-dto/estados-dto';
 import { CepService } from 'src/app/shared/services/cep/cep.service';
+import { Observable } from 'rxjs';
+import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
 
 @Component({
   selector: 'app-eventos-listagem',
@@ -15,31 +18,29 @@ import { CepService } from 'src/app/shared/services/cep/cep.service';
 export class EventosListagemComponent implements OnInit{
 
   formulario: FormGroup;
-  estados: EstadosDto[];
+  estados: Observable<EstadosDto[]>;
+  categorias: CategoriaEventoDto[];
+
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private http: HttpClient,
               private estadosSvc: EstadosService,
-              private cepSvc: CepService) {
+              private cepSvc: CepService,
+              private categoriaSvc: CategoriaEventoService) {
   }
 
   ngOnInit() {
     this.criarFormulario();
 
-    this.estadosSvc.getEstadosBr()
-      .subscribe(dados => {
-        this.estados = dados;
-        console.log(dados);
-      });
+    this.listarCategorias();
+    // this.estados = this.estadosSvc.getEstadosBr();
   }
 
   criarFormulario(){
     this.formulario = this.formBuilder.group({
-      nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      cep: [null, Validators.required],
-      endereco: [null],
-      estado: [null]
+      evento: [null, Validators.required],
+      dataEvento: [null, [Validators.required, Validators.email]],
+      categoria: [null, Validators.required]
     });
   }
 
@@ -71,5 +72,13 @@ export class EventosListagemComponent implements OnInit{
     this.formulario.patchValue({
       endereco: dados.logradouro
     });
+  }
+
+  listarCategorias(){
+    this.categoriaSvc.listarCategoriaEventos()
+      .subscribe(dados => {
+        console.log(dados);
+        this.categorias = dados;
+      });
   }
 }

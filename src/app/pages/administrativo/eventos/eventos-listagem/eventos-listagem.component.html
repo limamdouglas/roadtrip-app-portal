@@ -15,6 +15,22 @@
   <form class="form-horizontal" [formGroup]="formulario">
     <div class="row">
       <div class="col-4">
+        <label for="evento" class="control-label">Evento</label>
+        <input type="text" class="form-control" formControlName="evento" id="evento" placeholder="Digite o nome do evento">
+      </div>
+      <div class="col-4">
+        <label for="categoria" class="control-label">Categoria</label>
+        <select class="form-control" formControlName="categoria" id="categoria">
+          <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.descricao}}</option>
+        </select>
+      </div>
+      <div class="col-">
+        <label for="dataEvento" class="control-label">Data</label>
+        <input type="date" class="form-control" formControlName="dataEvento" id="dataEvento" placeholder="Digite a data do evento">
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-4">
         <label for="nome" class="control-label">Nome</label>
         <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite um nome">
       </div>
@@ -36,10 +52,11 @@
       </div>
       <div class="col-3">
         <label for="email" class="control-label">Estado</label>
-        <input type="text" class="form-control" formControlName="estado" id="estado"
-               placeholder="Estado">
+        <select  class="form-control" formControlName="estado" id="estado">
+          <option *ngFor="let estado of estados | async" [value]="estado.sigla">{{estado.nome}}</option>
+        </select>
       </div>
-    </div>
+    </div>-->
     <div class="row pt-3">
       <div class="col-1">
         <button class="btn btn-secondary" type="submit" (click)="pesquisarEvento()" [disabled]="!formulario.valid">Pesquisar</button>

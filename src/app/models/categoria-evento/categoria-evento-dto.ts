@@ -1,4 +1,4 @@
 export class CategoriaEventoDto {
-  categoriaEventoId: number;
+  id: number;
   descricao: string;
 }

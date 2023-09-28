@@ -1,7 +1,7 @@
 <ng-container [formGroupName]="controlName">
   <app-request-spinner [name]="spinnerSelectCategoriaEvento" [fullScreen]="false"></app-request-spinner>
   <ng-select [closeOnSelect]="true" [formControlName]="controlName" placeholder="Selecione um Cargo" [appendTo]="'body'" [ngClass]="{'is-invalid': controlContainer.control.get(controlName).invalid}">
-    <ng-option *ngFor="let categoriaEvento of categoriaEventos" [value]="categoriaEvento.categoriaEventoId">{{categoriaEvento.descricao}}</ng-option>
+    <ng-option *ngFor="let categoriaEvento of categoriaEventos" [value]="categoriaEvento.id">{{categoriaEvento.descricao}}</ng-option>
   </ng-select>
   <!-- <app-mensagem-formulario [control]="controlContainer.control.get(controlName)"></app-mensagem-formulario> -->
 </ng-container>

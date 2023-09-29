@@ -13,6 +13,7 @@ export class EventoService {
   constructor(private http: HttpClient) { }
 
   salvar(dto: EventoDto){
+    console.log(dto);
     return this.http.post(`${this.url}/Evento/AddEvento`,dto)
     .pipe(map(data => {
       return data;

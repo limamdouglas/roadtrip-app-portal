@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
 import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
 import { CategoriaEventoService } from 'src/app/services/categoria-evento/categoria-evento.service';
@@ -17,7 +18,8 @@ export class EventosCadastroComponent implements OnInit{
 
   constructor(private formBuilder: FormBuilder,
     private categoriaSvc: CategoriaEventoService,
-    private eventoSvc: EventoService){}
+    private eventoSvc: EventoService,
+    private router: Router){}
 
   ngOnInit() {
     this.criarFormulario();
@@ -36,17 +38,22 @@ export class EventosCadastroComponent implements OnInit{
 
   salvarEvento(){
     this.eventoDto = this.formulario.value
-    console.log(this.eventoDto);
     this.eventoSvc.salvar(this.eventoDto)
-      .subscribe()
+      .pipe()
+      .subscribe((data) => {
+        console.log("Evento Cadastrado");
+        console.log(data);
+        this.router.navigate(['/eventos/listar']);
+      })
+
   }
 
   voltar(){
-
+    this.router.navigate(['/eventos/listar']);
   }
 
   limpar(){
-
+    this.formulario.reset();
   }
 
   listarCategorias(){

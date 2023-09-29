@@ -9,6 +9,7 @@ import { EstadosDto } from 'src/app/models/shared/estados-dto/estados-dto';
 import { CepService } from 'src/app/shared/services/cep/cep.service';
 import { Observable } from 'rxjs';
 import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
+import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
 
 @Component({
   selector: 'app-eventos-listagem',
@@ -20,6 +21,7 @@ export class EventosListagemComponent implements OnInit{
   formulario: FormGroup;
   estados: Observable<EstadosDto[]>;
   categorias: CategoriaEventoDto[];
+  eventos: EventoDto[];
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
@@ -47,7 +49,7 @@ export class EventosListagemComponent implements OnInit{
   pesquisarEvento(){
   }
 
-  visualizar(){
+  visualizar(evento: string){
     this.router.navigate(['/eventos/visualizar-adm']);
   }
 
@@ -77,7 +79,6 @@ export class EventosListagemComponent implements OnInit{
   listarCategorias(){
     this.categoriaSvc.listarCategoriaEventos()
       .subscribe(dados => {
-        console.log(dados);
         this.categorias = dados;
       });
   }

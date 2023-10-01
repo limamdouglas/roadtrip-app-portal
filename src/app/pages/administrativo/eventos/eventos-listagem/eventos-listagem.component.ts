@@ -10,6 +10,7 @@ import { CepService } from 'src/app/shared/services/cep/cep.service';
 import { Observable } from 'rxjs';
 import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
 import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
+import { EventoService } from 'src/app/services/evento/evento.service';
 
 @Component({
   selector: 'app-eventos-listagem',
@@ -28,13 +29,15 @@ export class EventosListagemComponent implements OnInit{
               private http: HttpClient,
               private estadosSvc: EstadosService,
               private cepSvc: CepService,
-              private categoriaSvc: CategoriaEventoService) {
+              private categoriaSvc: CategoriaEventoService,
+              private eventoSvc: EventoService) {
   }
 
   ngOnInit() {
     this.criarFormulario();
 
     this.listarCategorias();
+    this.pesquisarEvento();
     // this.estados = this.estadosSvc.getEstadosBr();
   }
 
@@ -47,9 +50,13 @@ export class EventosListagemComponent implements OnInit{
   }
 
   pesquisarEvento(){
+    this.eventoSvc.listarEventos()
+      .subscribe(dados => {
+        this.eventos = dados;
+      });
   }
 
-  visualizar(evento: string){
+  visualizar(evento: EventoDto){
     this.router.navigate(['/eventos/visualizar-adm']);
   }
 

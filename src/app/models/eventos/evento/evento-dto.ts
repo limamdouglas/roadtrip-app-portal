@@ -1,6 +1,8 @@
 export class EventoDto {
+  id: number;
   nome: string;
-  categoriaId: number;
+  categoria: string;
   data: string;
   qtdVagas: number;
+  qtdVagasDisponiveis: number;
 }

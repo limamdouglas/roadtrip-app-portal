@@ -42,6 +42,8 @@ import { RequestSpinnerComponent } from './shared/components/request-spinner/req
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgSelectModule } from '@ng-select/ng-select'
 import { HttpClientModule } from '@angular/common/http';
+import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-editar/eventos-editar.component';
+import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { HttpClientModule } from '@angular/common/http';
     EventosCategoriaListagemComponent,
     SelectCategoriaEventoComponent,
     RequestSpinnerComponent,
+    EventosEditarComponent,
+    EventosVisualizarComponent,
   ],
   imports: [
     BrowserModule,

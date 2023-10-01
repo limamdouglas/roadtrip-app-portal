@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
-import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
+import { EventoCadastroDto } from 'src/app/models/eventos/evento/evento-cadastro-dto';
+import { PontoEmbarqueDto } from 'src/app/models/ponto-embarque/ponto-embarque-dto';
 import { CategoriaEventoService } from 'src/app/services/categoria-evento/categoria-evento.service';
 import { EventoService } from 'src/app/services/evento/evento.service';
+import { PontoEmbarqueService } from 'src/app/services/ponto-embarque/ponto-embarque.service';
 
 @Component({
   selector: 'app-eventos-cadastro',
@@ -13,11 +15,13 @@ import { EventoService } from 'src/app/services/evento/evento.service';
 })
 export class EventosCadastroComponent implements OnInit{
   categorias: CategoriaEventoDto[];
+  pontoEmbarques: PontoEmbarqueDto[];
   formulario: FormGroup;
-  eventoDto: EventoDto;
+  eventoDto: EventoCadastroDto;
 
   constructor(private formBuilder: FormBuilder,
     private categoriaSvc: CategoriaEventoService,
+    private pontoEmbarqueSvc: PontoEmbarqueService,
     private eventoSvc: EventoService,
     private router: Router){}
 
@@ -25,19 +29,25 @@ export class EventosCadastroComponent implements OnInit{
     this.criarFormulario();
 
     this.listarCategorias();
+    this.listarPontoEmbarques();
   }
 
   criarFormulario(){
     this.formulario = this.formBuilder.group({
-      evento: [null, Validators.required],
-      dataEvento: [null, [Validators.required]],
+      nome: [null, Validators.required],
+      data: [null, [Validators.required]],
       qtdVagas: [null, Validators.required],
-      categoria: [null, Validators.required]
+      categoria: [null, Validators.required],
+      descricao: [null, Validators.required],
+      roteiro: [null, Validators.required],
+      preco: [null, Validators.required],
+      pontoEmbarque: [null, Validators.required]
     });
   }
 
   salvarEvento(){
     this.eventoDto = this.formulario.value
+    console.log(this.eventoDto);
     this.eventoSvc.salvar(this.eventoDto)
       .pipe()
       .subscribe((data) => {
@@ -62,4 +72,12 @@ export class EventosCadastroComponent implements OnInit{
         this.categorias = dados;
       });
   }
+
+  listarPontoEmbarques(){
+    this.pontoEmbarqueSvc.listarPontoEmbarques()
+      .subscribe(dados => {
+        this.pontoEmbarques = dados;
+      });
+  }
+
 }

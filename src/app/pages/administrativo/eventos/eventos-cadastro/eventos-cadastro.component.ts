@@ -47,12 +47,9 @@ export class EventosCadastroComponent implements OnInit{
 
   salvarEvento(){
     this.eventoDto = this.formulario.value
-    console.log(this.eventoDto);
     this.eventoSvc.salvar(this.eventoDto)
       .pipe()
       .subscribe((data) => {
-        console.log("Evento Cadastrado");
-        console.log(data);
         this.router.navigate(['/eventos/listar']);
       })
 

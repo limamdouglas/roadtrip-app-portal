@@ -56,6 +56,19 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'staff',
+    children: [
+      {
+        path: 'cadastar',
+        component: StaffCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: StaffListagemComponent,
+      },
+    ]
+  },
+  {
     path: 'clentes',
     children: [
       {

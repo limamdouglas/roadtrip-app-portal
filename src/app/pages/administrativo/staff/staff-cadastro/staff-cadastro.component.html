@@ -1,1 +1,30 @@
-<p>staff-cadastro works!</p>
+<app-menu-administrativo></app-menu-administrativo>
+<div class="container py-3">
+  <div class="d-flex">
+    <h3>Cadastro de colaborador</h3>
+  </div>
+  <hr>
+  <form class="form-horizontal" [formGroup]="formulario">
+    <div class="row">
+      <div class="col-3">
+        <label for="nome" class="control-label">Nome</label>
+        <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite o nome do colaborador">
+      </div>
+      <div class="col-3">
+        <label for="nome" class="control-label">Cargo</label>
+        <input type="text" class="form-control" formControlName="cargo" id="cargo" placeholder="Digite o cargo do colaborador">
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="salvarEvento()" [disabled]="!formulario.valid">Salvar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="voltar()">Voltar</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -57,7 +57,13 @@ export class EventosListagemComponent implements OnInit{
   }
 
   visualizar(evento: EventoDto){
-    this.router.navigate(['/eventos/visualizar-adm']);
+    this.eventoSvc.setEvento(evento)
+    this.router.navigate(['/eventos/visualizar']);
+  }
+
+  editar(evento: EventoDto){
+    this.eventoSvc.setEvento(evento)
+    this.router.navigate(['/eventos/editar']);
   }
 
   cadastarEvento(){

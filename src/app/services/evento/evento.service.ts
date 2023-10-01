@@ -11,6 +11,15 @@ export class EventoService {
 
   url = "https://localhost:7211"
 
+  private evento: EventoDto | null = null;
+  setEvento(evento: EventoDto) {
+    this.evento = evento;
+  }
+
+  getEvento(): EventoDto | null {
+    return this.evento;
+  }
+
   constructor(private http: HttpClient) { }
 
   salvar(dto: EventoCadastroDto){

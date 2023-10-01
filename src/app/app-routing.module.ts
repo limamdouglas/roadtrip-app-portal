@@ -1,3 +1,4 @@
+import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeAdministrativoComponent } from './home/home-administrativo/home-administrativo.component';
@@ -13,6 +14,7 @@ import { EventosClientesListagemComponent } from './pages/administrativo/eventos
 import { EventosStaffCadastroComponent } from './pages/administrativo/eventos-staff/eventos-staff-cadastro/eventos-staff-cadastro.component';
 import { EventosStaffListagemComponent } from './pages/administrativo/eventos-staff/eventos-staff-listagem/eventos-staff-listagem.component';
 import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos-cadastro/eventos-cadastro.component';
+import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-editar/eventos-editar.component';
 
 const routes: Routes = [
   {
@@ -44,12 +46,12 @@ const routes: Routes = [
         component: EventosListagemComponent,
       },
       {
-        path: 'categoria-cadastar',
-        component: EventosListagemComponent,
+        path: 'visualizar',
+        component: EventosVisualizarComponent
       },
       {
-        path: 'categoria-listar',
-        component: EventosListagemComponent,
+        path: 'editar',
+        component: EventosEditarComponent
       }
     ]
   },

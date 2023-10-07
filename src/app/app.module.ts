@@ -44,6 +44,8 @@ import { NgSelectModule } from '@ng-select/ng-select'
 import { HttpClientModule } from '@angular/common/http';
 import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-editar/eventos-editar.component';
 import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
+import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
+import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import { EventosVisualizarComponent } from './pages/administrativo/eventos/event
     RequestSpinnerComponent,
     EventosEditarComponent,
     EventosVisualizarComponent,
+    EscalaListagemComponent,
+    EscalaCadastroComponent,
   ],
   imports: [
     BrowserModule,

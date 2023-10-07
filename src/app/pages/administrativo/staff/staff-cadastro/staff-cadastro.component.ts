@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffCadastroDto } from 'src/app/models/staff/staff-cadastro-dto';
+import { StaffDto } from 'src/app/models/staff/staff-dto';
 import { EventoService } from 'src/app/services/evento/evento.service';
 import { PontoEmbarqueService } from 'src/app/services/ponto-embarque/ponto-embarque.service';
 import { StaffService } from 'src/app/services/staff/staff.service';
@@ -26,7 +27,10 @@ export class StaffCadastroComponent implements OnInit{
   criarFormulario(){
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
-      cargo: [null, [Validators.required]],
+      cpf: [null, Validators.required],
+      cargoId: [null, [Validators.required]],
+      rg: [null, Validators.required],
+      orgaoEmissor: [null, Validators.required],
     });
   }
 
@@ -35,7 +39,7 @@ export class StaffCadastroComponent implements OnInit{
     this.staffSvc.salvar(this.staffDto)
        .pipe()
        .subscribe((data) => {
-         this.router.navigate(['/eventos/listar']);
+         this.router.navigate(['/staff/listar']);
        })
 
   }

@@ -31,7 +31,7 @@ export class StaffListagemComponent implements OnInit{
 
   ngOnInit() {
     this.criarFormulario();
-    this.pesquisarEvento();
+    this.pesquisarStaff();
   }
 
   criarFormulario(){
@@ -49,9 +49,10 @@ export class StaffListagemComponent implements OnInit{
     this.formulario.reset();
   }
 
-  pesquisarEvento(){
+  pesquisarStaff(){
      this.staffSvc.listarStaff()
        .subscribe(dados => {
+        console.log(dados);
          this.staff = dados;
        });
   }

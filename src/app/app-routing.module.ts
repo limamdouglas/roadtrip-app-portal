@@ -15,6 +15,8 @@ import { EventosStaffCadastroComponent } from './pages/administrativo/eventos-st
 import { EventosStaffListagemComponent } from './pages/administrativo/eventos-staff/eventos-staff-listagem/eventos-staff-listagem.component';
 import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos-cadastro/eventos-cadastro.component';
 import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-editar/eventos-editar.component';
+import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
+import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
 
 const routes: Routes = [
   {
@@ -117,6 +119,19 @@ const routes: Routes = [
       {
         path: 'listar',
         component: EventosStaffListagemComponent,
+      }
+    ]
+  },
+  {
+    path: 'escala',
+    children: [
+      {
+        path: 'cadastar',
+        component: EscalaCadastroComponent,
+      },
+      {
+        path: 'listar',
+        component: EscalaListagemComponent,
       }
     ]
   },

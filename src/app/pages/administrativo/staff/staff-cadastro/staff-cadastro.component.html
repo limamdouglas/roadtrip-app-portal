@@ -6,13 +6,27 @@
   <hr>
   <form class="form-horizontal" [formGroup]="formulario">
     <div class="row">
-      <div class="col-3">
+      <div class="col-4">
         <label for="nome" class="control-label">Nome</label>
         <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite o nome do colaborador">
       </div>
-      <div class="col-3">
+      <div class="col-4">
+        <label for="nome" class="control-label">CPF</label>
+        <input type="text" class="form-control" formControlName="cpf" id="cpf" placeholder="Digite o cargo do colaborador">
+      </div>
+      <div class="col-4">
         <label for="nome" class="control-label">Cargo</label>
-        <input type="text" class="form-control" formControlName="cargo" id="cargo" placeholder="Digite o cargo do colaborador">
+        <input type="text" class="form-control" formControlName="cargoId" id="cargoId" placeholder="Digite o cargo do colaborador">
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-4">
+        <label for="nome" class="control-label">RG</label>
+        <input type="text" class="form-control" formControlName="rg" id="rg" placeholder="Digite o nome do colaborador">
+      </div>
+      <div class="col-4">
+        <label for="nome" class="control-label">Órgão Emissao</label>
+        <input type="text" class="form-control" formControlName="orgaoEmissor" id="orgaoEmissor" placeholder="Digite o nome do colaborador">
       </div>
     </div>
     <div class="row pt-3">

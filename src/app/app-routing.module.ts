@@ -5,11 +5,8 @@ import { HomeAdministrativoComponent } from './home/home-administrativo/home-adm
 import { HomeClienteComponent } from './home/home-cliente/home-cliente.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 import { EventosListagemComponent } from './pages/administrativo/eventos/eventos-listagem/eventos-listagem.component';
-import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
-import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
 import { StaffCadastroComponent } from './pages/administrativo/staff/staff-cadastro/staff-cadastro.component';
 import { StaffListagemComponent } from './pages/administrativo/staff/staff-listagem/staff-listagem.component';
-import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
 import { EventosClientesListagemComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-listagem/eventos-clientes-listagem.component';
 import { EventosStaffCadastroComponent } from './pages/administrativo/eventos-staff/eventos-staff-cadastro/eventos-staff-cadastro.component';
 import { EventosStaffListagemComponent } from './pages/administrativo/eventos-staff/eventos-staff-listagem/eventos-staff-listagem.component';
@@ -17,6 +14,11 @@ import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos
 import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-editar/eventos-editar.component';
 import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
 import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
+import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
+import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
+import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
+import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedidos-cadastro.component';
+import { PedidosListagemComponent } from './pages/pedidos/pedidos-listagem/pedidos-listagem.component';
 
 const routes: Routes = [
   {
@@ -71,28 +73,15 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'clentes',
+    path: 'clientes',
     children: [
       {
-        path: 'cadastar',
+        path: 'cadastrar',
         component: ClientesCadastroComponent,
       },
       {
         path: 'listar',
         component: ClientesListagemComponent,
-      }
-    ]
-  },
-  {
-    path: 'staff',
-    children: [
-      {
-        path: 'cadastar',
-        component: StaffCadastroComponent,
-      },
-      {
-        path: 'listar',
-        component: StaffListagemComponent,
       }
     ]
   },
@@ -135,6 +124,19 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'pedidos',
+    children:[
+      {
+        path: 'cadastrar',
+        component: PedidosCadastroComponent
+      },
+      {
+        path: 'listar',
+        component: PedidosListagemComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

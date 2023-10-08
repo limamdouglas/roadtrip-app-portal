@@ -44,6 +44,8 @@ import { EventosVisualizarComponent } from './pages/administrativo/eventos/event
 import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
 import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
+import { PedidosListagemComponent } from './pages/pedidos/pedidos-listagem/pedidos-listagem.component';
+import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedidos-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -68,8 +70,6 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     EstornoComponent,
     EventosCadastroComponent,
     EventosListagemComponent,
-    ClientesCadastroComponent,
-    ClientesListagemComponent,
     EventosClientesCadastroComponent,
     EventosClientesListagemComponent,
     EventosStaffCadastroComponent,
@@ -82,7 +82,11 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     EventosEditarComponent,
     EventosVisualizarComponent,
     EscalaListagemComponent,
-    EscalaCadastroComponent
+    EscalaCadastroComponent,
+    ClientesCadastroComponent,
+    ClientesListagemComponent,
+    PedidosListagemComponent,
+    PedidosCadastroComponent
   ],
   imports: [
     BrowserModule,

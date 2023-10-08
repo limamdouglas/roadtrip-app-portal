@@ -69,12 +69,6 @@ export class EscalaCadastroComponent implements OnInit{
         .subscribe((data) => {
           console.log(data);
         })
-
-    // this.eventoSvc.salvar(this.eventoDto)
-    //   .pipe()
-    //   .subscribe((data) => {
-    //     this.router.navigate(['/eventos/listar']);
-    //   })
   }
 
   limpar(){

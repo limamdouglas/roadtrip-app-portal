@@ -1,1 +1,65 @@
-<p>clientes-cadastro works!</p>
+<app-menu-administrativo></app-menu-administrativo>
+<div class="container py-3">
+  <div class="d-flex justify-content-between">
+    <h1>Cadastrar cliente</h1>
+</div>
+<hr>
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="row">
+    <div class="col-4">
+      <label for="nome" class="control-label">Nome</label>
+      <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite o nome do evento">
+    </div>
+    <div class="col-4">
+      <label for="sobrenome" class="control-label">Sobrenome</label>
+      <input type="text" class="form-control" formControlName="sobrenome" id="sobrenome" placeholder="Digite o nome do evento">
+    </div>
+    <div class="col-4">
+      <label for="cpf" class="control-label">CPF</label>
+      <input type="text" class="form-control" formControlName="cpf" id="cpf" placeholder="Digite a data do evento">
+    </div>
+
+  </div>
+  <div class="row pt-3">
+    <div class="col-4">
+      <p class="m-0"><label for="rg" class="control-label">RG</label></p>
+      <input type="text" class="form-control" formControlName="rg" id="rg" placeholder="Digite o nome do evento">
+    </div>
+    <div class="col-4">
+      <p class="m-0"><label for="orgaoEmissor" class="control-label">Órgão Emissor</label></p>
+      <input type="text" class="form-control" formControlName="orgaoEmissor" id="orgaoEmissor" placeholder="Digite o nome do evento">
+    </div>
+    <div class="col-4">
+      <label for="dataNascimento" class="control-label">Data de Nascimento</label>
+      <input type="date" class="form-control" formControlName="dataNascimento" id="dataNascimento" placeholder="Digite o numero de vagas">
+    </div>
+
+  </div>
+  <div class="row pt-3">
+    <div class="col-4">
+      <label for="email" class="control-label">Email</label>
+      <input type="email" class="form-control" formControlName="email" id="email" placeholder="Digite o numero de vagas">
+    </div>
+    <div class="col-4">
+      <label for="telefone" class="control-label">Telefone</label>
+      <input type="fone" class="form-control" formControlName="telefone" id="telefone" placeholder="Digite o numero de vagas">
+    </div>
+    <div class="col-4">
+      <label for="regiao" class="control-label">Região onde mora</label>
+      <input type="text" class="form-control" formControlName="regiao" id="regiao" placeholder="Digite o nome do evento">
+    </div>
+
+  </div>
+
+  <div class="row pt-3">
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="salvarEvento()">Salvar</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="voltar()">Voltar</button>
+    </div>
+  </div>
+</form>

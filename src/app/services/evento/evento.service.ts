@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { EventoCadastroDto } from 'src/app/models/eventos/evento/evento-cadastro-dto';
 import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
+import { StaffEventoDto } from 'src/app/models/staff-evento/staff-evento-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,13 @@ export class EventoService {
 
   listarEventos(){
     return this.http.get<EventoDto[]>(`${this.url}/Evento/ListarEventos`)
+    .pipe(map(data => {
+      return data;
+    }));
+  }
+
+  listarRelacionamentoStaffEventos(eventoId: number){
+    return this.http.get<StaffEventoDto>(`${this.url}/EventoFuncionario/ListarEventosFuncionarios/${eventoId}`)
     .pipe(map(data => {
       return data;
     }));

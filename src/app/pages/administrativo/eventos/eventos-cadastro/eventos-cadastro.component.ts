@@ -52,7 +52,6 @@ export class EventosCadastroComponent implements OnInit{
       .subscribe((data) => {
         this.router.navigate(['/eventos/listar']);
       })
-
   }
 
   voltar(){

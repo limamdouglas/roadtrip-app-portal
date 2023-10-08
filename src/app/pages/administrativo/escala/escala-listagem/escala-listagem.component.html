@@ -35,15 +35,19 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Staff</th>
-      <th scope="col">Cargo</th>
+      <th scope="col">Evento</th>
+      <th scope="col">Guia</th>
+      <th scope="col">Suporte</th>
+      <th scope="col">Fotografo</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of escala">
       <td>{{item.id}}</td>
-      <td>{{item.nome}}</td>
-      <td>{{item.categoria}}</td>
+      <td>{{item.evento}}</td>
+      <td>{{item.guia}}</td>
+      <td>{{item.suporte}}</td>
+      <td>{{item.fotografo}}</td>
       <!-- <td>
         <button class="btn btn-secondary btn-block mx-2" type="submit" (click)="visualizar(evento)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

@@ -1,1 +1,32 @@
-<p>escala-cadastro works!</p>
+<app-menu-administrativo></app-menu-administrativo>
+<div class="container py-3">
+  <div class="d-flex justify-content-between">
+    <h1>Montar Escala</h1>
+</div>
+<hr>
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="row">
+    <div class="col-4">
+      <label for="evento" class="control-label">Evento</label>
+      <select class="form-control" formControlName="evento" id="evento" (change)="onEventoChange()">
+        <option *ngFor="let evento of eventos" [value]="evento.id">{{evento.nome}}</option>
+      </select>
+    </div>
+  </div>
+  <br>
+  <dual-list [source]="source" [(destination)]="confirmed" [sort]="true" [key]="'id'" [display]="'nome'">
+  </dual-list>
+
+  <div class="row pt-3">
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="salvarEscala()" [disabled]="!formulario.valid">Salvar</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-secondary" type="submit" (click)="voltar()">Voltar</button>
+    </div>
+  </div>
+
+</form>

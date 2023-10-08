@@ -46,6 +46,7 @@ import { EventosEditarComponent } from './pages/administrativo/eventos/eventos-e
 import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
 import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
 import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,7 @@ import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-ca
     EventosEditarComponent,
     EventosVisualizarComponent,
     EscalaListagemComponent,
-    EscalaCadastroComponent,
+    EscalaCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +99,8 @@ import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-ca
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    NgSelectModule
+    NgSelectModule,
+    AngularDualListBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

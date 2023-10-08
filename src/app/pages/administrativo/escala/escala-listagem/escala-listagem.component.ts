@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { MesesDto } from 'src/app/models/shared/mes-dto/meses-dto';
 import { EscalaService } from 'src/app/services/escala/escala.service';
 import { MesService } from 'src/app/shared/services/mes/mes.service';
+import { EscalaDto } from 'src/app/models/escala/escala-dto';
 
 @Component({
   selector: 'app-escala-listagem',
@@ -17,7 +18,7 @@ export class EscalaListagemComponent implements OnInit{
   formulario: FormGroup;
   meses: MesesDto[];
   eventos: any[];
-  escala: any[];
+  escala: EscalaDto[];
 
   constructor(private router: Router,
     private formBuilder: FormBuilder,
@@ -42,7 +43,10 @@ export class EscalaListagemComponent implements OnInit{
   }
 
   pesquisarEscala(){
-
+    this.escalaSvc.listarEscala()
+    .subscribe(dados => {
+      this.escala = dados;
+    });
   }
 
   cadastarEscala(){

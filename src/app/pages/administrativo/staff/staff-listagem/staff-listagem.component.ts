@@ -45,6 +45,10 @@ export class StaffListagemComponent implements OnInit{
     this.router.navigate(['/staff/cadastar']);
   }
 
+  mostrarEscala(){
+    this.router.navigate(['/escala/listar']);
+  }
+
   limparFiltro(){
     this.formulario.reset();
   }

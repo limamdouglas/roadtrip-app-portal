@@ -19,8 +19,6 @@ import { EventosLsitarComponent } from './pages/eventos/eventos-lsitar/eventos-l
 import { SolicitacaoClienteComponent } from './pages/sac/solicitacao-cliente/solicitacao-cliente.component';
 import { EventoVisualizarComponent } from './pages/eventos/evento-visualizar/evento-visualizar.component';
 import { QuitacaoEventoComponent } from './pages/comercial/quitacao-evento/quitacao-evento.component';
-import { MelhoresEventosComponent } from './pages/administracao/melhores-eventos/melhores-eventos.component';
-import { MelhoresClientesComponent } from './pages/administracao/melhores-clientes/melhores-clientes.component';
 import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualizar-adm/eventos-visualizar-adm.component';
 import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
 import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
@@ -37,7 +35,6 @@ import { StaffCadastroComponent } from './pages/administrativo/staff/staff-cadas
 import { StaffListagemComponent } from './pages/administrativo/staff/staff-listagem/staff-listagem.component';
 import { EventosCategoriaCadastroComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-cadastro/eventos-categoria-cadastro.component';
 import { EventosCategoriaListagemComponent } from './pages/administrativo/eventos/eventos-categoria/eventos-categoria-listagem/eventos-categoria-listagem.component';
-import { SelectCategoriaEventoComponent } from './shared/components/select-categoria-evento/select-categoria-evento.component';
 import { RequestSpinnerComponent } from './shared/components/request-spinner/request-spinner.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgSelectModule } from '@ng-select/ng-select'
@@ -65,8 +62,6 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     SolicitacaoClienteComponent,
     EventoVisualizarComponent,
     QuitacaoEventoComponent,
-    MelhoresEventosComponent,
-    MelhoresClientesComponent,
     EventosVisualizarAdmComponent,
     CreditoListarComponent,
     CreditoCadastrarComponent,
@@ -83,7 +78,6 @@ import { AngularDualListBoxModule } from 'angular-dual-listbox';
     StaffListagemComponent,
     EventosCategoriaCadastroComponent,
     EventosCategoriaListagemComponent,
-    SelectCategoriaEventoComponent,
     RequestSpinnerComponent,
     EventosEditarComponent,
     EventosVisualizarComponent,

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ClienteService } from 'src/app/services/cliente/cliente.service';
 import { EventoService } from 'src/app/services/evento/evento.service';
 import { PedidoService } from 'src/app/services/pedidos/pedido.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pedidos-cadastro',
@@ -38,11 +39,13 @@ export class PedidosCadastroComponent implements OnInit {
   }
 
   verificarCPF() {
-    const value = this.formulario.get('cpf').value;
-    if (/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/.test(value)) {
+    let value = this.formulario.get('cpf').value;
+
+    value = value.replace(/[.-]/g, '');
+
+    if (/^\d{11}$/.test(value)) {
       this.clienteSvc.buscarCliente(value)
         .subscribe(dados => {
-          console.log(dados);
           if (dados) {
             this.formulario.get('quantidade').enable();
             this.formulario.get('ehReserva').enable();
@@ -54,14 +57,28 @@ export class PedidosCadastroComponent implements OnInit {
               clienteId: dados.id
             });
 
+
+
+          } else {
+            Swal.fire({
+              title: 'Esse cpf não está cadastrado no sistema. Deseja cadastrar?',
+              showCancelButton: true,
+              confirmButtonText: 'Sim',
+              cancelButtonText: 'Não',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/clientes/cadastrar']);
+              }
+            })
+
           }
         });
 
     } else {
       this.formulario.get('nome').disable();
-      this.formulario.get('quantidade').enable();
-      this.formulario.get('ehReserva').enable();
-      this.formulario.get('evento').enable();
+      this.formulario.get('quantidade').disable();
+      this.formulario.get('ehReserva').disable();
+      this.formulario.get('evento').disable();
     }
   }
 
@@ -75,10 +92,17 @@ export class PedidosCadastroComponent implements OnInit {
   salvarRelacionamentoClienteEvento() {
     this.pedidoDto = this.formulario.value
     this.pedidoSvc.salvar(this.pedidoDto)
-       .pipe()
-       .subscribe((data) => {
-         this.router.navigate(['/pedidos/listar']);
-       })
+      .pipe()
+      .subscribe((data) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Pedido cadastrado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.router.navigate(['/pedidos/listar']);
+      })
   }
 
   voltar() {

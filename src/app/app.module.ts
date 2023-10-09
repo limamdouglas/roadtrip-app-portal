@@ -41,6 +41,12 @@ import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-ca
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { PedidosCadastroComponent } from './pages/administrativo/pedidos/pedidos-cadastro/pedidos-cadastro.component';
 import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos-listagem/pedidos-listagem.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -88,7 +94,9 @@ import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos
     ReactiveFormsModule,
     NgxSpinnerModule,
     NgSelectModule,
-    AngularDualListBoxModule
+    NgxMaskModule.forRoot(maskConfig),
+    AngularDualListBoxModule,
+    // SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

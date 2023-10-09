@@ -7,6 +7,10 @@
 <form class="form-horizontal" [formGroup]="formulario">
   <div class="row">
     <div class="col-4">
+      <label for="cpf" class="control-label">CPF</label>
+      <input type="text" class="form-control" formControlName="cpf" mask="000.000.000-00" id="cpf" placeholder="Digite a data do evento">
+    </div>
+    <div class="col-4">
       <label for="nome" class="control-label">Nome</label>
       <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite o nome do evento">
     </div>
@@ -14,11 +18,6 @@
       <label for="sobrenome" class="control-label">Sobrenome</label>
       <input type="text" class="form-control" formControlName="sobrenome" id="sobrenome" placeholder="Digite o nome do evento">
     </div>
-    <div class="col-4">
-      <label for="cpf" class="control-label">CPF</label>
-      <input type="text" class="form-control" formControlName="cpf" id="cpf" placeholder="Digite a data do evento">
-    </div>
-
   </div>
   <div class="row pt-3">
     <div class="col-4">

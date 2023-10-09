@@ -16,12 +16,8 @@ import { DashboardClienteComponent } from './pages/dashboard//dashboard-cliente/
 import { DashboardAdministrativoComponent } from './pages/dashboard/dashboard-administrativo/dashboard-administrativo.component';
 import { EventosClienteComponent } from './pages/eventos/eventos-cliente/eventos-cliente.component';
 import { EventosLsitarComponent } from './pages/eventos/eventos-lsitar/eventos-lsitar.component';
-import { SolicitacaoClienteComponent } from './pages/sac/solicitacao-cliente/solicitacao-cliente.component';
 import { EventoVisualizarComponent } from './pages/eventos/evento-visualizar/evento-visualizar.component';
 import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualizar-adm/eventos-visualizar-adm.component';
-import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
-import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
-import { EstornoComponent } from './pages/financeiro/estorno/estorno.component';
 import { EventosCadastroComponent } from './pages/administrativo/eventos/eventos-cadastro/eventos-cadastro.component';
 import { EventosListagemComponent } from './pages/administrativo/eventos/eventos-listagem/eventos-listagem.component';
 import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
@@ -60,12 +56,8 @@ import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos
     DashboardAdministrativoComponent,
     EventosClienteComponent,
     EventosLsitarComponent,
-    SolicitacaoClienteComponent,
     EventoVisualizarComponent,
     EventosVisualizarAdmComponent,
-    CreditoListarComponent,
-    CreditoCadastrarComponent,
-    EstornoComponent,
     EventosCadastroComponent,
     EventosListagemComponent,
     EventosClientesCadastroComponent,

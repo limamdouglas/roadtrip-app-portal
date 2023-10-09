@@ -43,6 +43,7 @@ import { PedidosCadastroComponent } from './pages/administrativo/pedidos/pedidos
 import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos-listagem/pedidos-listagem.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -96,8 +97,10 @@ const maskConfig: Partial<IConfig> = {
     NgSelectModule,
     NgxMaskModule.forRoot(maskConfig),
     AngularDualListBoxModule,
-    // SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    NgxSpinnerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

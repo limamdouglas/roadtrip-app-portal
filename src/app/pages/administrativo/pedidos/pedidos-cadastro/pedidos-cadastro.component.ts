@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { finalize } from 'rxjs';
 import { ClienteService } from 'src/app/services/cliente/cliente.service';
 import { EventoService } from 'src/app/services/evento/evento.service';
 import { PedidoService } from 'src/app/services/pedidos/pedido.service';
@@ -21,7 +23,8 @@ export class PedidosCadastroComponent implements OnInit {
     private eventoSvc: EventoService,
     private clienteSvc: ClienteService,
     private pedidoSvc: PedidoService,
-    private router: Router) { }
+    private router: Router,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.criarFormulario();
@@ -39,12 +42,17 @@ export class PedidosCadastroComponent implements OnInit {
   }
 
   verificarCPF() {
+
     let value = this.formulario.get('cpf').value;
 
     value = value.replace(/[.-]/g, '');
 
     if (/^\d{11}$/.test(value)) {
+      this.spinner.show();
       this.clienteSvc.buscarCliente(value)
+        .pipe(
+          finalize(() => this.spinner.hide())
+        )
         .subscribe(dados => {
           if (dados) {
             this.formulario.get('quantidade').enable();
@@ -72,6 +80,9 @@ export class PedidosCadastroComponent implements OnInit {
             })
 
           }
+
+
+
         });
 
     } else {

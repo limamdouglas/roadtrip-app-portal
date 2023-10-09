@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-pedidos-listagem',
@@ -10,10 +11,12 @@ import { Router } from '@angular/router';
 export class PedidosListagemComponent implements OnInit{
 
   constructor(private router: Router,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    ) {
     }
 
   ngOnInit() {
+
   }
 
   cadastarPedido(){

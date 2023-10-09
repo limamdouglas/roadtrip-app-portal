@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { CategoriaEventoDto } from 'src/app/models/categoria-evento/categoria-evento-dto';
 import { EventoDto } from 'src/app/models/eventos/evento/evento-dto';
 import { EventoService } from 'src/app/services/evento/evento.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-eventos-listagem',
@@ -30,7 +31,8 @@ export class EventosListagemComponent implements OnInit{
               private estadosSvc: EstadosService,
               private cepSvc: CepService,
               private categoriaSvc: CategoriaEventoService,
-              private eventoSvc: EventoService) {
+              private eventoSvc: EventoService,
+             ) {
   }
 
   ngOnInit() {
@@ -39,6 +41,7 @@ export class EventosListagemComponent implements OnInit{
     this.listarCategorias();
     this.pesquisarEvento();
     // this.estados = this.estadosSvc.getEstadosBr();
+
   }
 
   criarFormulario(){

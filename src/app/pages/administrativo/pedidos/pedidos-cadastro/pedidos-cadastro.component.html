@@ -1,0 +1,54 @@
+<app-menu-administrativo></app-menu-administrativo>
+<div class="container py-3">
+
+  <div class="d-flex justify-content-between">
+    <div>
+      <h1>Cadastrar Pedidos</h1>
+    </div>
+  </div>
+  <hr>
+  <form class="form-horizontal" [formGroup]="formulario">
+    <div class="row">
+      <div class="col-4">
+        <label for="nome" class="control-label">CPF</label>
+        <input type="text" class="form-control" formControlName="cpf" id="cpf" placeholder="Digite o cpf do cliente"
+          (input)="verificarCPF()">
+      </div>
+      <div class="col-4">
+        <label for="nome" class="control-label">Nome</label>
+        <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Digite o nome do cliente">
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-4">
+        <label for="evento" class="control-label">Evento</label>
+        <select class="form-control" formControlName="evento" id="evento">
+          <option *ngFor="let evento of eventos" [value]="evento.id">{{evento.nome}}</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <label for="quantidade" class="control-label">Quantidade</label>
+        <input type="text" class="form-control" formControlName="quantidade" id="quantidade"
+          placeholder="Digite o nome do cliente">
+      </div>
+      <div class="col-1">
+        <label for="ehReserva" class="control-label">Reserva</label>
+        <div style="display: flex; justify-content: center;">
+          <input type="checkbox" formControlName="ehReserva" id="ehReserva"
+            style="transform: scale(1.5); margin: 10px 0;">
+        </div>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="salvarRelacionamentoClienteEvento()">Salvar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-secondary" type="submit" (click)="voltar()">Voltar</button>
+      </div>
+    </div>
+  </form>
+</div>

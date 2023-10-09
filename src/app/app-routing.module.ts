@@ -1,3 +1,5 @@
+import { PedidosCadastroComponent } from './pages/administrativo/pedidos/pedidos-cadastro/pedidos-cadastro.component';
+import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos-listagem/pedidos-listagem.component';
 import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,8 +19,6 @@ import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-ca
 import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
 import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
 import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
-import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedidos-cadastro.component';
-import { PedidosListagemComponent } from './pages/pedidos/pedidos-listagem/pedidos-listagem.component';
 
 const routes: Routes = [
   {

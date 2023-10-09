@@ -18,7 +18,6 @@ import { EventosClienteComponent } from './pages/eventos/eventos-cliente/eventos
 import { EventosLsitarComponent } from './pages/eventos/eventos-lsitar/eventos-lsitar.component';
 import { SolicitacaoClienteComponent } from './pages/sac/solicitacao-cliente/solicitacao-cliente.component';
 import { EventoVisualizarComponent } from './pages/eventos/evento-visualizar/evento-visualizar.component';
-import { QuitacaoEventoComponent } from './pages/comercial/quitacao-evento/quitacao-evento.component';
 import { EventosVisualizarAdmComponent } from './pages/eventos/eventos-visualizar-adm/eventos-visualizar-adm.component';
 import { CreditoListarComponent } from './pages/sac/credito-listar/credito-listar.component';
 import { CreditoCadastrarComponent } from './pages/sac/credito-cadastrar/credito-cadastrar.component';
@@ -44,8 +43,8 @@ import { EventosVisualizarComponent } from './pages/administrativo/eventos/event
 import { EscalaListagemComponent } from './pages/administrativo/escala/escala-listagem/escala-listagem.component';
 import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-cadastro/escala-cadastro.component';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
-import { PedidosListagemComponent } from './pages/pedidos/pedidos-listagem/pedidos-listagem.component';
-import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedidos-cadastro.component';
+import { PedidosCadastroComponent } from './pages/administrativo/pedidos/pedidos-cadastro/pedidos-cadastro.component';
+import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos-listagem/pedidos-listagem.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +62,6 @@ import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedid
     EventosLsitarComponent,
     SolicitacaoClienteComponent,
     EventoVisualizarComponent,
-    QuitacaoEventoComponent,
     EventosVisualizarAdmComponent,
     CreditoListarComponent,
     CreditoCadastrarComponent,
@@ -85,8 +83,8 @@ import { PedidosCadastroComponent } from './pages/pedidos/pedidos-cadastro/pedid
     EscalaCadastroComponent,
     ClientesCadastroComponent,
     ClientesListagemComponent,
+    PedidosCadastroComponent,
     PedidosListagemComponent,
-    PedidosCadastroComponent
   ],
   imports: [
     BrowserModule,

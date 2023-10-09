@@ -13,16 +13,27 @@ import { EventoService } from 'src/app/services/evento/evento.service';
 export class EventosVisualizarComponent implements OnInit{
 
   eventoDto: EventoDto;
+  pontosEmbarque: any[];
+  quantidadeTotal: number;
+  quantidadeVendida: number;
+  quantidadeRestante: number;
+  staff: any[];
+  clientes: any[];
 
   constructor(private Router: Router,
     private FormBuilder: FormBuilder,
     private http: HttpClient,
     private eventoSvc: EventoService) {
       this.eventoDto = this.eventoSvc.getEvento();
+      this.quantidadeTotal = this.eventoDto.qtdVagas;
+      this.quantidadeVendida = this.eventoDto.qtdVagas - this.eventoDto.qtdVagasDisponiveis;
+      this.quantidadeRestante = this.eventoDto.qtdVagasDisponiveis;
+      this.pontosEmbarque = this.eventoDto.pontoEmbarque;
+      this.staff = this.eventoDto.staff;
+      this.clientes = this.eventoDto.cliente;
     }
 
 
   ngOnInit() {
-    console.log(this.eventoDto);
   }
 }

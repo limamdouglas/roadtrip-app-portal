@@ -27,4 +27,11 @@ export class ClienteService {
       return data;
     }));
   }
+
+  buscarCliente(cpf: string){
+    return this.http.get<ClienteDto>(`${this.url}/Cliente/BuscarCliente/${cpf}`)
+    .pipe(map(data => {
+      return data;
+    }));
+}
 }

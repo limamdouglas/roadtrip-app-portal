@@ -7,6 +7,8 @@ export class EventoDto {
     preco: number;
     qtdVagas: number;
     qtdVagasDisponiveis: number;
-    pontoDeEmbarque: number[];
+    pontoEmbarque: number[];
     categoria: number;
+    staff: any[];
+    cliente: any[];
 }

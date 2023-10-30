@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClienteCadastroDto } from 'src/app/models/cliente/cliente-cadastro-dto';
 import { ClienteService } from 'src/app/services/cliente/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-clientes-cadastro',
@@ -36,11 +37,18 @@ export class ClientesCadastroComponent implements OnInit{
     });
   }
 
-  salvarEvento(){
+  salvarCliente(){
     this.clienteDto = this.formulario.value
     this.clienteSvc.salvar(this.clienteDto)
       .pipe()
       .subscribe((data) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Cliente cadastrado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        });
         this.router.navigate(['/clientes/listar']);
       })
   }

@@ -67,7 +67,7 @@ export class EscalaCadastroComponent implements OnInit{
     this.escalaSvc.salvar(dtoTeste)
         .pipe()
         .subscribe((data) => {
-          console.log(data);
+          this.router.navigate(['/escala/listar']);
         })
   }
 

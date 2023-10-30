@@ -6,6 +6,7 @@ import { StaffDto } from 'src/app/models/staff/staff-dto';
 import { EventoService } from 'src/app/services/evento/evento.service';
 import { PontoEmbarqueService } from 'src/app/services/ponto-embarque/ponto-embarque.service';
 import { StaffService } from 'src/app/services/staff/staff.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-staff-cadastro',
@@ -39,6 +40,13 @@ export class StaffCadastroComponent implements OnInit{
     this.staffSvc.salvar(this.staffDto)
        .pipe()
        .subscribe((data) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Staff cadastrado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        });
          this.router.navigate(['/staff/listar']);
        })
 

@@ -4,6 +4,7 @@
     <h1>Cadastrar cliente</h1>
 </div>
 <hr>
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 <form class="form-horizontal" [formGroup]="formulario">
   <div class="row">
     <div class="col-4">
@@ -52,7 +53,7 @@
 
   <div class="row pt-3">
     <div class="col-1">
-      <button class="btn btn-secondary" type="submit" (click)="salvarEvento()">Salvar</button>
+      <button class="btn btn-secondary" type="submit" (click)="salvarCliente()">Salvar</button>
     </div>
     <div class="col-1">
       <button class="btn btn-secondary" type="submit" (click)="limpar()">Limpar</button>

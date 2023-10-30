@@ -7,6 +7,7 @@ import { PontoEmbarqueDto } from 'src/app/models/ponto-embarque/ponto-embarque-d
 import { CategoriaEventoService } from 'src/app/services/categoria-evento/categoria-evento.service';
 import { EventoService } from 'src/app/services/evento/evento.service';
 import { PontoEmbarqueService } from 'src/app/services/ponto-embarque/ponto-embarque.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-eventos-cadastro',
@@ -50,6 +51,13 @@ export class EventosCadastroComponent implements OnInit{
     this.eventoSvc.salvar(this.eventoDto)
       .pipe()
       .subscribe((data) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Evento cadastrado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        });
         this.router.navigate(['/eventos/listar']);
       })
   }

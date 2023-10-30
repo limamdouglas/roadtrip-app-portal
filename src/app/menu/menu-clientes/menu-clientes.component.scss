@@ -1,0 +1,74 @@
+/* Afasta os itens do menu da esquerda e ajusta a caixa de crédito */
+.credit-box {
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Ajusta o posicionamento do ícone do menu e o título */
+.navbar-toggler {
+  margin-right: 0.5rem !important;
+}
+
+/* Estilização personalizada para o título "Capivara" */
+.custom-title {
+  font-weight: bold;
+  color: #f88424 !important;
+  margin-right: 1rem !important; /* Ajustar conforme necessário */
+}
+
+/* Estilização para os links do menu centralizado */
+.navbar-nav .nav-link {
+  color: white !important;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f88424 !important;
+}
+
+/* Por padrão, ocultar o menu-desktop */
+.menu-desktop {
+  display: none;
+}
+
+/* Em dispositivos com tela até 768px de largura */
+@media (max-width: 768px) {
+  /* Ocultar menu-desktop e exibir menu-mobile */
+  .menu-desktop {
+    display: none;
+  }
+  .menu-mobile {
+    display: block;
+  }
+}
+
+/* Em dispositivos com tela acima de 768px de largura */
+@media (min-width: 769px) {
+  /* Ocultar menu-mobile e exibir menu-desktop */
+  .menu-mobile {
+    display: none;
+  }
+  .menu-desktop {
+    display: block;
+  }
+}
+
+/* Estilo para o título "PORTAL CAPIVARA" */
+.brand-title {
+  color: #f88424;
+  font-weight: bold;
+}
+
+/* Estilo para a seção de crédito */
+.credit-section {
+  background-color: black;
+  color: #f88424;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+

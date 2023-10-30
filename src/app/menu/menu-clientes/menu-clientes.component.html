@@ -1,6 +1,46 @@
-<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<nav class="menu-mobile navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Menu à esquerda -->
+    <button class="navbar-toggler ml-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Título no centro -->
+    <a class="navbar-brand custom-title" href="#">PORTAL CAPIVARA</a>
+
+    <!-- Botão Sair à direita -->
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="sair()">Sair</button>
+  </div>
+
+  <div class="d-flex justify-content-start mt-2">
+    <!-- Crédito abaixo do título -->
+    <div class="credit-box ml-3">
+      <label style="color: #f88424">Crédito: </label>
+      <label style="color: #f88424">R$150</label>
+    </div>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav me-auto mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home-cliente">Dashboard
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/eventos/meus-eventos">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Conexões</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+<nav class="menu-desktop navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Capivara</a>
+    <a class="navbar-brand brand-title" href="#">PORTAL CAPIVARA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,12 +59,13 @@
         </li>
       </ul>
       <form class="d-flex mx-3">
-        <div class="my-2 mx-4 bg-white">
-          <label class="p-1" style="color: black">Crédito: </label>
-          <label class="p-1" style="color: black">R$150</label>
+        <div class="credit-section my-2 mx-4">
+          <label class="p-1">Crédito: </label>
+          <label class="p-1">R$150</label>
         </div>
         <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="sair()">Sair</button>
       </form>
     </div>
   </div>
 </nav>
+

@@ -10,11 +10,10 @@ import { LoginDto } from 'src/app/models/login/login-dto';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup; // Declarando a propriedade
+  loginForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     private router: Router) {
-    // O loginForm não é inicializado no construtor
   }
 
   ngOnInit(): void {

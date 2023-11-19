@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClienteEventoDto } from 'src/app/models/cliente/cliente-evento/cliente-evento-dto';
@@ -12,6 +12,7 @@ import { ClienteEventoService } from 'src/app/services/cliente-evento/cliente-ev
 export class DashboardClienteComponent implements OnInit{
 
   eventos: ClienteEventoDto[];
+  @Input() IdCliente: number;
 
   constructor(private clienteEveto: ClienteEventoService,
     private router: Router) {
@@ -19,10 +20,11 @@ export class DashboardClienteComponent implements OnInit{
 
   ngOnInit(): void {
     this.pesquisarEventos();
+    console.log('Dashboard:IdCliente:', this.IdCliente);
   }
 
   pesquisarEventos(){
-    this.clienteEveto.listarEventos()
+    this.clienteEveto.listarEventos(this.IdCliente)
     .subscribe(dados => {
      console.log(dados);
       this.eventos = dados;
@@ -37,8 +39,8 @@ export class DashboardClienteComponent implements OnInit{
     this.router.navigate(['/eventos/meus-eventos']);
   }
 
-  checkIn(){
-    this.router.navigate(['eventos/visualizar']);
+  checkIn(idEvento: number) {
+    this.router.navigate(['/checkin'], { queryParams: { IdCliente: this.IdCliente, IdEvento: idEvento } });
   }
 
   avaliar(){

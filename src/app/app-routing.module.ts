@@ -1,7 +1,7 @@
 import { PedidosCadastroComponent } from './pages/administrativo/pedidos/pedidos-cadastro/pedidos-cadastro.component';
 import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos-listagem/pedidos-listagem.component';
 import { EventosVisualizarComponent } from './pages/administrativo/eventos/eventos-visualizar/eventos-visualizar.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeAdministrativoComponent } from './home/home-administrativo/home-administrativo.component';
 import { HomeClienteComponent } from './home/home-cliente/home-cliente.component';
@@ -19,6 +19,7 @@ import { EscalaCadastroComponent } from './pages/administrativo/escala/escala-ca
 import { EventosClientesCadastroComponent } from './pages/administrativo/eventos-clientes/eventos-clientes-cadastro/eventos-clientes-cadastro.component';
 import { ClientesCadastroComponent } from './pages/administrativo/clientes/clientes-cadastro/clientes-cadastro.component';
 import { ClientesListagemComponent } from './pages/administrativo/clientes/clientes-listagem/clientes-listagem.component';
+import { CheckinComponent } from './pages/checkin/checkin.component';
 
 const routes: Routes = [
   {
@@ -136,6 +137,10 @@ const routes: Routes = [
         component: PedidosListagemComponent
       }
     ]
+  },
+  {
+    path: 'checkin',
+    component: CheckinComponent
   }
 ];
 

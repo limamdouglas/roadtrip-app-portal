@@ -34,6 +34,9 @@ export class LoginComponent implements OnInit {
     if(dto.username == 'admin')
       this.router.navigate(['home-administrativo']);
     else
-      this.router.navigate(['home-cliente']);
+    {
+      const IdCliente = 1;
+      this.router.navigate(['home-cliente'], { queryParams: { IdCliente: IdCliente } });
+    }
   }
 }

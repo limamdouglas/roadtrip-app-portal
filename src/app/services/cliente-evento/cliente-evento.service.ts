@@ -14,8 +14,8 @@ export class ClienteEventoService {
 
   constructor(private http: HttpClient) { }
 
-  listarEventos(){
-    return this.http.get<ClienteEventoDto[]>(`${this.url}/EventoCliente/ListarEventosPorCliente`)
+  listarEventos(IdCliente: number){
+    return this.http.get<ClienteEventoDto[]>(`${this.url}/EventoCliente/ListarEventosPorCliente/${IdCliente}`)
     .pipe(map(data => {
       return data;
     }));

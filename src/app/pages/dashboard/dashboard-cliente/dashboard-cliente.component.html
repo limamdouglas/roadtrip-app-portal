@@ -23,8 +23,12 @@
                   </button>
 
                   <ng-template #avaliarBlock>
-                    <button class="btn btn-secondary" type="submit" data-bs-toggle="modal"
+                    <!-- <button class="btn btn-secondary" type="submit" data-bs-toggle="modal"
                       data-bs-target="#exampleModal" (click)="checkIn()" [disabled]="evento.qtdDias > 5">
+                      Check-in
+                    </button> -->
+                    <button class="btn btn-secondary" type="submit" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal" (click)="checkIn(evento.id)">
                       Check-in
                     </button>
                   </ng-template>

@@ -44,6 +44,7 @@ import { PedidosListagemComponent } from './pages/administrativo/pedidos/pedidos
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CheckinComponent } from './pages/checkin/checkin.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -84,6 +85,7 @@ const maskConfig: Partial<IConfig> = {
     ClientesListagemComponent,
     PedidosCadastroComponent,
     PedidosListagemComponent,
+    CheckinComponent,
   ],
   imports: [
     BrowserModule,

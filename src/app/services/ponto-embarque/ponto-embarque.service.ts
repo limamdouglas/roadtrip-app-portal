@@ -18,4 +18,11 @@ export class PontoEmbarqueService {
       return data;
     }));
   }
+
+  listarPontoEmbarquesPorEvento(idEvento: number){
+    return this.http.get<PontoEmbarqueDto[]>(`${this.url}/PontoEmbarque/ListarPontoEmbarquesPorEvento/${idEvento}`)
+    .pipe(map(data => {
+      return data;
+    }));
+  }
 }

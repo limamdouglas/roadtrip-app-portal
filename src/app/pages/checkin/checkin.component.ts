@@ -22,7 +22,7 @@ export class CheckinComponent implements OnInit {
   staffEvento: StaffEventoDto = new StaffEventoDto;
   staff: StaffDto[];
   pontoEmbarqueEvento: PontoEmbarqueDto[];
-  numeroAcompanhantes = 3;
+  numeroAcompanhantes = 2;
   idCliente: number;
   idEvento: number;
 
@@ -44,24 +44,21 @@ export class CheckinComponent implements OnInit {
     .subscribe(dados => {
       this.staffEvento = dados;
       this.staff = this.staffEvento.staffEvento;
-      console.log(this.staff);
     });
 
     this.pontoEmbarqueSvc.listarPontoEmbarquesPorEvento(this.idEvento)
     .subscribe(dados => {
       this.pontoEmbarqueEvento = dados;
-      console.log(this.pontoEmbarqueEvento);
     })
 
-    // for (let i = 0; i < this.numeroAcompanhantes; i++) {
-    //   const form = this.fb.group({
-    //     nome: ['', Validators.required],
-    //     cpf: ['', Validators.required],
-    //     telefone: ['', Validators.required],
-    //   });
-
-    //   this.acompanhanteForms.push(form);
-    // }
+     for (let i = 0; i < this.numeroAcompanhantes; i++) {
+       const form = this.fb.group({
+         id: [`form_${i}`, Validators.required],
+         nome: ['', Validators.required],
+         cpf: ['', Validators.required],
+         telefone: ['', Validators.required],
+       });
+     }
   }
 
   onSubmit() {

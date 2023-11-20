@@ -1,22 +1,38 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.text{
+  color: #f88424;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+  width: auto;
 }
 
-.select-container,
-.confirmation-container {
-  margin-top: 20px;
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+  width: auto;
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: auto;
+}
+
+.confirmation-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
+
 }
